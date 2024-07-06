@@ -59,7 +59,7 @@ module test_instruction_memory;
         i_instruction_address = 32'h5;
         // En este caso tiene que devolver lo mismo que la instrucction_address 4
         // ya que el modulo no esta preparado para devolver instrucciones cuyo address
-        // no sean un m ltiplo de 4
+        // no sean un múltiplo de 4
         #1
         if (o_instruction != 32'h7a) begin
             $display("Anduvo mal. Tiene que dar el mismo numero que antes.");

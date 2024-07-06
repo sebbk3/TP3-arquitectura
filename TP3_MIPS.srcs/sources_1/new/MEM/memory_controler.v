@@ -17,15 +17,16 @@
 // Revision 0.01 - File Created
 // Additional Comments:
 // 
+//////////////////////////////////////////////////////////////////////////////////
 
-`define BYTE_WORD       2'b00
-`define HALF_WORD       2'b01
-`define COMPLETE_WORD   2'b10
+`define BYTE_WORD 3'b001
+`define HALF_WORD 3'b010
+`define COMPLETE_WORD 3'b100
  
 
 module memory_controller#(
     parameter DATA_WIDTH = 32,
-    parameter TYPE_WIDTH = 2
+    parameter TYPE_WIDTH = 3
 ) 
 (   
     input i_signed,
@@ -38,7 +39,7 @@ module memory_controller#(
     output reg [DATA_WIDTH-1:0] o_read_data
 );
 
-    reg [DATA_WIDTH-1:0]   write_data;
+    //reg [DATA_WIDTH-1:0]   write_data;
 
 	always@(*) begin
         // Lectura

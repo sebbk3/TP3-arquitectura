@@ -22,8 +22,8 @@
 
 module memory_data #(
     parameter MEM_CELL_SIZE = 32,
-    parameter MAX_ADDRESS = 16,
-    parameter ADDRESS_BYTES = 4 // Address size determinado x la cant de direcciones que podemos tener
+    parameter MAX_ADDRESS = 32,
+    parameter ADDRESS_BYTES = 5 // Address size determinado x la cant de direcciones que podemos tener
 ) (
     input i_clock,
     input i_enable,
@@ -35,6 +35,13 @@ module memory_data #(
 );
 
   reg [MEM_CELL_SIZE-1:0] RAM[0:MAX_ADDRESS];
+
+  generate
+		integer index;
+		initial
+			for (index = 0; index < MAX_ADDRESS; index = index + 1)
+				RAM[index] = index;
+	endgenerate
 
   always @(posedge i_clock) begin
     if (i_enable) begin

@@ -3,7 +3,7 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 
+// Create Date:
 // Design Name: 
 // Module Name: test_adder
 // Project Name: 
@@ -63,7 +63,7 @@ module test_adder;
         
         #1;
         if (o_Result != 8'b11111110) begin
-            // Hay un overflow que no vamos a poder ver porque no es el objetivo del m dulo
+            // Hay un overflow que no vamos a poder ver porque no es el objetivo del módulo
             $display("Error en el caso de prueba 3: %b + %b != %b", i_A, i_B, o_Result);
             $finish;
        end 
