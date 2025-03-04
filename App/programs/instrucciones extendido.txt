@@ -1,0 +1,19 @@
+addi R1, 7
+addi R2, 3
+addi R3, 2
+addi R4, 0
+sw R1, 0(R4)
+sw R2, 1(R4)
+sw R3, 2(R4)
+lw R5, 0(R4)
+lw R6, 1(R4)
+subu R7, R5, R6
+addu R9, R1, R9
+beq R7, R3, 5
+addu R8, R5, R6
+sw R8, 3(R4)
+addu R3, R3, R3
+j 10
+addi R10, 15
+addi R11, 16
+halt
